@@ -1,0 +1,17 @@
+# Design Compiler generated files
+synthesis/reports/
+synthesis/outputs/
+synthesis/work/
+
+# Formality generated reports
+synthesis/formality/reports/
+
+# ICC2 generated files
+icc2/outputs_icc2/
+icc2/rpts_icc2/
+icc2/calibre_work/
+
+# Simulation/tool-generated files
+*.vcd
+*.fsdb
+*.log

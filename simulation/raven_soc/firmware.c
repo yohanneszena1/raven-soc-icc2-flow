@@ -19,15 +19,13 @@ void print(const char *p)
 
 void main()
 {
-	// Set clock to 64 kbaud
+	// UART divider used by the project simulation firmware.
+	// The project testbench runs the selected SoC clock at 100 MHz.
+	// The legacy tbuart model is not baud-matched to this divider, so the
+	// testbench verifies UART transmit activity rather than decoded text.
 	reg_uart_clkdiv = 625;
 
-	// NOTE: Crystal is running in simulation at 5MHz
-	// Internal clock is 8x crystal, or 40MHz
-	// Divided by clkdiv is 64 kHz
-	// So at this crystal rate, use clkdiv = 4167 for 9600 baud.
-
-	// This should appear at the output, received by the testbench UART.
+	// Write a banner to the UART; the project testbench verifies transmit activity.
         print("\n");
         print("  ____  _          ____         ____\n");
         print(" |  _ \\(_) ___ ___/ ___|  ___  / ___|\n");
